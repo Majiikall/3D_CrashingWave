@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Particle : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject part; //Set the game object
+    public int size;  //Size of particle
+    public float acceleration;  //Accelreration value
+    public Vector3 velocity;  //Velocity direction
+    public float mass;  //Mass or density
+    public Vector3 position;  //Position in space
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+      print("here");
+      print(size);
+      print(part);
+      print(position);
+      Instantiate(part, position, Quaternion.identity);
     }
 }
