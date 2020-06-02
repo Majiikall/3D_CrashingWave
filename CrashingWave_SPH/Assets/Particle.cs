@@ -10,13 +10,4 @@ public class Particle : MonoBehaviour
     public Vector3 velocity;  //Velocity direction
     public float mass;  //Mass or density
     public Vector3 position;  //Position in space
-
-    void Start()
-    {
-      print("here");
-      print(size);
-      print(part);
-      print(position);
-      Instantiate(part, position, Quaternion.identity);
-    }
 }
