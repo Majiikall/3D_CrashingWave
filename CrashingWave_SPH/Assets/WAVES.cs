@@ -63,10 +63,10 @@ public class WAVES : MonoBehaviour
                  + (max - Vector3.Distance(p3, localPos))
                  + (max - Vector3.Distance(p4, localPos) + Mathf.Epsilon);
         // weighted sum
-        var height = Mesh.vertices[index(p1.x, p1.z)].y * (max - Vector3.Distance(p1, localPos))
-                   + Mesh.vertices[index(p2.x, p2.z)].y * (max - Vector3.Distance(p2, localPos))
-                   + Mesh.vertices[index(p3.x, p3.z)].y * (max - Vector3.Distance(p3, localPos))
-                   + Mesh.vertices[index(p4.x, p4.z)].y * (max - Vector3.Distance(p4, localPos));
+        var height = Mesh.vertices[(int)index2(p1.x, p1.z)].y * (max - Vector3.Distance(p1, localPos))
+                   + Mesh.vertices[(int)index2(p2.x, p2.z)].y * (max - Vector3.Distance(p2, localPos))
+                   + Mesh.vertices[(int)index2(p3.x, p3.z)].y * (max - Vector3.Distance(p3, localPos))
+                   + Mesh.vertices[(int)index2(p4.x, p4.z)].y * (max - Vector3.Distance(p4, localPos));
         //Scale
         return height * transform.lossyScale.y / dist;
     }
@@ -92,6 +92,11 @@ public class WAVES : MonoBehaviour
     }
 
     private int index(int x, int y)
+    {
+      return ((x * (dimension + 1)) + y);
+    }
+
+    private float index2(float x, float y)
     {
       return ((x * (dimension + 1)) + y);
     }
