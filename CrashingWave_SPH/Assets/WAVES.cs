@@ -34,7 +34,7 @@ public class WAVES : MonoBehaviour
       MeshFilter.mesh = Mesh;
     }
 
-    public float GetHeight(Vector3 position)
+    public float GetHeight(Vector3 position) 
     {
         //scale factor and position in local space
         var scale = new Vector3(1 / transform.lossyScale.x, 0, 1 / transform.lossyScale.z);
